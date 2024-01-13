@@ -25,6 +25,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<C-k>", "<C-u>")
 vim.keymap.set("n", "<C-j>", "<C-d>")
+vim.keymap.set("t", "<C-'>", "<C-\\><C-n><C-Tab>")
 -- Neovide
 vim.g.neovide_scale_factor = 0.9
 vim.g.neovide_scroll_animation_length = 0.2
