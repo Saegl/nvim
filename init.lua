@@ -1,43 +1,5 @@
--- General neovim configs
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-vim.keymap.set("n", "<leader>m", function() vim.cmd("Telescope projects") end)
-vim.keymap.set("n", "<C-`>", function() vim.cmd(":terminal") end)
-vim.keymap.set("n", "<C-b>", function() vim.cmd("Neotree") end)
-vim.api.nvim_create_user_command('Conf', function() vim.cmd(":edit $MYVIMRC") end, {})
-vim.api.nvim_exec ('language en_US', true)
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.smartcase = true
-vim.opt.hlsearch = false
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
-vim.opt.shell = 'pwsh'
-vim.opt.shellcmdflag = '-NoProfile -NoLogo -NonInteractive -Command'
-vim.opt.shellquote = ''
-vim.opt.shellxquote = ''
-
-vim.opt.scrolloff = 10
-
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set("n", "<C-k>", "<C-u>")
-vim.keymap.set("n", "<C-j>", "<C-d>")
-vim.keymap.set("t", "<C-'>", "<C-\\><C-n><C-Tab>")
--- Neovide
-vim.g.neovide_scale_factor = 0.9
-vim.g.neovide_scroll_animation_length = 0.2
-vim.g.neovide_hide_mouse_when_typing = true
-vim.g.neovide_refresh_rate = 165
-vim.g.neovide_refresh_rate_idle = 5
-vim.g.neovide_profiler = false
-vim.g.neovide_cursor_vfx_mode = ""  -- set 'pixiedust' to enable
-vim.g.neovide_cursor_vfx_opacity = 500.0
-vim.g.neovide_cursor_vfx_particle_lifetime = 3.0
-vim.g.neovide_cursor_vfx_particle_density = 100.0
+require("remap")
+require("neovide")
 
 -- Plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -55,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- Themes
-    { 'rose-pine/neovim', name = 'rose-pine' },
+    { 'rose-pine/neovim',                 name = 'rose-pine' },
     -- Fuzzy finder
     {
         'nvim-telescope/telescope.nvim',
@@ -167,48 +129,48 @@ require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
 cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  completion = {
-    completeopt = 'menu,menuone,noinsert',
-  },
-  mapping = cmp.mapping.preset.insert {
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<Tab>'] = cmp.mapping(function (fallback)
-        if cmp.visible() then
-            cmp.select_next_item()
-        elseif luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
-        else
-            fallback()
-        end
-    end, {'i', 's'}),
-    ['<S-Tab>'] = cmp.mapping(function (fallback)
-        if cmp.visible() then
-            cmp.select_prev_item()
-        elseif luasnip.locally_jumpable(-1) then
-            luasnip.jump(-1)
-        else
-            fallback()
-        end
-    end, {'i', 's'}),
-    ['<CR>'] = cmp.mapping.confirm {
-        behavior = cmp.ConfirmBehavior.Replace,
-        select = false
+    snippet = {
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end,
     },
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-d>'] = cmp.mapping.scroll_docs(4),
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'path' },
-  },
+    completion = {
+        completeopt = 'menu,menuone,noinsert',
+    },
+    mapping = cmp.mapping.preset.insert {
+        ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.expand_or_locally_jumpable() then
+                luasnip.expand_or_jump()
+            else
+                fallback()
+            end
+        end, { 'i', 's' }),
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { 'i', 's' }),
+        ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = false
+        },
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    },
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+        { name = 'path' },
+    },
 }
 
 
@@ -223,4 +185,3 @@ require("gitsigns").setup({
 })
 
 require("project_nvim").setup()
-
