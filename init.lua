@@ -1,5 +1,6 @@
 -- General neovim configs
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "<leader>m", function() vim.cmd("Telescope projects") end)
 vim.keymap.set("n", "<C-`>", function() vim.cmd(":terminal") end)
