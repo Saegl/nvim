@@ -17,7 +17,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- Themes
-    { 'rose-pine/neovim',                 name = 'rose-pine' },
+    {
+        'rose-pine/neovim', name = 'rose-pine',
+    },
     -- Fuzzy finder
     {
         'nvim-telescope/telescope.nvim',
