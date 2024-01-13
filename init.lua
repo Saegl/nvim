@@ -101,7 +101,16 @@ require("lazy").setup({
     {
         'hrsh7th/nvim-cmp',
         dependencies = {
-            { 'L3MON4D3/LuaSnip' }
+            -- Snippet Engine & its associated nvim-cmp source
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip',
+
+            -- Adds LSP completion capabilities
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-path',
+
+            -- Adds a number of user-friendly snippets
+            'rafamadriz/friendly-snippets',
         },
     },
     -- Git integration
@@ -153,25 +162,54 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
+local luasnip = require 'luasnip'
+require('luasnip.loaders.from_vscode').lazy_load()
+luasnip.config.setup {}
 
-cmp.setup({
-  mapping = cmp.mapping.preset.insert({
-    -- `Enter` key to confirm completion
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
-
-    -- Ctrl+Space to trigger completion menu
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  completion = {
+    completeopt = 'menu,menuone,noinsert',
+  },
+  mapping = cmp.mapping.preset.insert {
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<Tab>'] = cmp.mapping(function (fallback)
+        if cmp.visible() then
+            cmp.select_next_item()
+        elseif luasnip.expand_or_locally_jumpable() then
+            luasnip.expand_or_jump()
+        else
+            fallback()
+        end
+    end, {'i', 's'}),
+    ['<S-Tab>'] = cmp.mapping(function (fallback)
+        if cmp.visible() then
+            cmp.select_prev_item()
+        elseif luasnip.locally_jumpable(-1) then
+            luasnip.jump(-1)
+        else
+            fallback()
+        end
+    end, {'i', 's'}),
+    ['<CR>'] = cmp.mapping.confirm {
+        behavior = cmp.ConfirmBehavior.Replace,
+        select = false
+    },
     ['<C-Space>'] = cmp.mapping.complete(),
-
-    -- Navigate between snippet placeholder
-    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-
-    -- Scroll up and down in the completion documentation
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
-  })
-})
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'path' },
+  },
+}
 
 
 require("rose-pine").setup({
@@ -185,3 +223,4 @@ require("gitsigns").setup({
 })
 
 require("project_nvim").setup()
+
