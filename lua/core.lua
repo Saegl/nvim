@@ -14,9 +14,6 @@ vim.api.nvim_exec ('language en_US', true)
 -- Fast access to conf
 vim.api.nvim_create_user_command('Conf', function() vim.cmd(":edit $MYVIMRC") end, {})
 
--- 3rd party
-vim.keymap.set("n", "<leader>m", function() vim.cmd("Telescope projects") end)
-
 -- Terminal
 vim.keymap.set({"n", "i"}, "<C-`>", function()
     -- Open a tab with terminal

@@ -1,4 +1,4 @@
-require("remap")
+require("core")
 require("neovide")
 require("install_lazy")
 require("plugins")
