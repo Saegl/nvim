@@ -32,7 +32,7 @@ vim.keymap.set({"n", "i"}, "<C-`>", function()
             end
         end
     end
-    -- Optionally, open a new terminal in a new tab if none is found
+    -- Or create new terminal tab 
     vim.cmd('tabnew | term')
     vim.cmd('startinsert')
 end)
