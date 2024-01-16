@@ -16,7 +16,6 @@ vim.api.nvim_create_user_command('Conf', function() vim.cmd(":edit $MYVIMRC") en
 
 -- 3rd party
 vim.keymap.set("n", "<leader>m", function() vim.cmd("Telescope projects") end)
-vim.keymap.set("n", "<C-b>", function() vim.cmd("Neotree") end)
 
 -- Terminal
 vim.keymap.set({"n", "i"}, "<C-`>", function()
