@@ -19,8 +19,25 @@ vim.keymap.set("n", "<leader>m", function() vim.cmd("Telescope projects") end)
 vim.keymap.set("n", "<C-b>", function() vim.cmd("Neotree") end)
 
 -- Terminal
-vim.keymap.set("n", "<C-`>", function() vim.cmd(":terminal") end)
-vim.keymap.set("t", "<C-'>", "<C-\\><C-n><C-Tab>")
+vim.keymap.set({"n", "i"}, "<C-`>", function()
+    -- Open a tab with terminal
+    local tabs = vim.api.nvim_list_tabpages()
+    for _, tab in ipairs(tabs) do
+        local wins = vim.api.nvim_tabpage_list_wins(tab)
+        for _, win in ipairs(wins) do
+            local buf = vim.api.nvim_win_get_buf(win)
+            if vim.bo[buf].buftype == 'terminal' then
+                vim.api.nvim_set_current_tabpage(tab)
+                vim.cmd("startinsert")
+                return
+            end
+        end
+    end
+    -- Optionally, open a new terminal in a new tab if none is found
+    vim.cmd('tabnew | term')
+    vim.cmd('startinsert')
+end)
+vim.keymap.set("t", "<C-`>", "<C-\\><C-n><C-Tab>")
 vim.opt.shell = 'pwsh'
 vim.opt.shellcmdflag = '-NoProfile -NoLogo -NonInteractive -Command'
 vim.opt.shellquote = ''
