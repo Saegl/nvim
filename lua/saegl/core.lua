@@ -10,7 +10,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- Always use english
-vim.api.nvim_exec ('language en_US', true)
+-- TODO: only on windows
+-- vim.api.nvim_exec ('language en_US', true)
 -- Fast access to conf
 vim.api.nvim_create_user_command('Conf', function() vim.cmd(":edit $MYVIMRC") end, {})
 
@@ -34,10 +35,11 @@ vim.keymap.set({"n", "i"}, "<C-`>", function()
     vim.cmd('startinsert')
 end)
 vim.keymap.set("t", "<C-`>", "<C-\\><C-n><C-Tab>")
-vim.opt.shell = 'pwsh'
-vim.opt.shellcmdflag = '-NoProfile -NoLogo -NonInteractive -Command'
-vim.opt.shellquote = ''
-vim.opt.shellxquote = ''
+-- TODO: only on windows
+-- vim.opt.shell = 'pwsh'
+-- vim.opt.shellcmdflag = '-NoProfile -NoLogo -NonInteractive -Command'
+-- vim.opt.shellquote = ''
+-- vim.opt.shellxquote = ''
 
 -- Awesome selection
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -47,4 +49,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<C-k>", "<C-u>")
 vim.keymap.set("n", "<C-j>", "<C-d>")
 vim.opt.scrolloff = 10
+
+-- Copy to clipboard
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 

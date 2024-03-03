@@ -32,8 +32,9 @@ require("lazy").setup({
                     "python",
                     "javascript", "html", "css",
                     "rust",
-                    "toml", "yaml"
+                    "toml", -- "yaml"
                 },
+                auto_install = true;
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = true },
@@ -41,8 +42,8 @@ require("lazy").setup({
         end
     },
     -- Autocompletion with LSP
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
+    -- { 'williamboman/mason.nvim' },
+    -- { 'williamboman/mason-lspconfig.nvim' },
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
