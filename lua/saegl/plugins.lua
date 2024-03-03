@@ -1,4 +1,5 @@
 require("lazy").setup({
+    'tpope/vim-sleuth',  -- Detect tabstop and shiftwidth automatically
     -- Theme
     {
         'rose-pine/neovim', name = 'rose-pine',
