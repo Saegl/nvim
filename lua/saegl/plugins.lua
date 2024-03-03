@@ -1,5 +1,6 @@
 require("lazy").setup({
     'tpope/vim-sleuth',  -- Detect tabstop and shiftwidth automatically
+    { 'numToStr/Comment.nvim', opts = {} },  -- Add comments
     -- Theme
     {
         'rose-pine/neovim', name = 'rose-pine',
