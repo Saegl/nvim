@@ -13,10 +13,14 @@ lsp_zero.configure('lua_ls', {
     },
 })
 lsp_zero.configure('pyright', {})
+lsp_zero.configure('pylsp', {})
+lsp_zero.configure('ruff_lsp', {})
 
 lsp_zero.setup_servers({
     'lua_ls',
     'pyright',
+    'pylsp',
+    'ruff_lsp',
 })
 
 
