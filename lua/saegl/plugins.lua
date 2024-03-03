@@ -1,6 +1,7 @@
 require("lazy").setup({
     'tpope/vim-sleuth',  -- Detect tabstop and shiftwidth automatically
     { 'numToStr/Comment.nvim', opts = {} },  -- Add comments
+    'direnv/direnv.vim', -- Auto load direnv on vim change dir
     -- Theme
     {
         'rose-pine/neovim', name = 'rose-pine',
