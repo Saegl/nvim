@@ -1,3 +1,6 @@
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+
+
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.set_preferences({
