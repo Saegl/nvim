@@ -35,11 +35,16 @@ vim.keymap.set({"n", "i"}, "<C-`>", function()
     vim.cmd('startinsert')
 end)
 vim.keymap.set("t", "<C-`>", "<C-\\><C-n><C-Tab>")
+
 -- TODO: only on windows
 -- vim.opt.shell = 'pwsh'
 -- vim.opt.shellcmdflag = '-NoProfile -NoLogo -NonInteractive -Command'
 -- vim.opt.shellquote = ''
 -- vim.opt.shellxquote = ''
+
+-- Tabs
+-- Doesn't work because terminals cannot diff between <C-Tab> and <Tab> :-(
+vim.keymap.set("n", "<C-Tab>", 'gt')
 
 -- Awesome selection
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
