@@ -18,12 +18,22 @@ lsp_zero.configure('lua_ls', {
 lsp_zero.configure('pyright', {})
 lsp_zero.configure('pylsp', {})
 lsp_zero.configure('ruff_lsp', {})
+lsp_zero.configure('nil_ls', {
+    settings = {
+        ['nil'] = {
+            formatting = {
+                command = { "alejandra" }
+            }
+        }
+    }
+})
 
 lsp_zero.setup_servers({
     'lua_ls',
     'pyright',
     'pylsp',
     'ruff_lsp',
+    'nil_ls',
 })
 
 
