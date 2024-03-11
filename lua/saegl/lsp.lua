@@ -15,6 +15,7 @@ lsp_zero.configure('lua_ls', {
         },
     },
 })
+lsp_zero.configure('jsonls', {})
 lsp_zero.configure('pyright', {})
 lsp_zero.configure('pylsp', {})
 lsp_zero.configure('ruff_lsp', {})
@@ -29,6 +30,7 @@ lsp_zero.configure('nil_ls', {
 })
 
 lsp_zero.setup_servers({
+    'jsonls',
     'lua_ls',
     'pyright',
     'pylsp',
