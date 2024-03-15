@@ -1,7 +1,7 @@
 require("lazy").setup({
-    'tpope/vim-sleuth',  -- Detect tabstop and shiftwidth automatically
-    { 'numToStr/Comment.nvim', opts = {} },  -- Add comments
-    'direnv/direnv.vim', -- Auto load direnv on vim change dir
+    'tpope/vim-sleuth',                      -- Detect tabstop and shiftwidth automatically
+    { 'numToStr/Comment.nvim',  opts = {} }, -- Add comments
+    'direnv/direnv.vim',                     -- Auto load direnv on vim change dir
     {
         'ggandor/leap.nvim',
         config = function()
@@ -48,7 +48,7 @@ require("lazy").setup({
                     "rust",
                     "toml", -- "yaml"
                 },
-                auto_install = true;
+                auto_install = true,
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = true },
@@ -88,4 +88,3 @@ require("lazy").setup({
     -- Git integration
     { 'lewis6991/gitsigns.nvim' },
 })
-
