@@ -28,6 +28,11 @@ require("lazy").setup({
             'ahmedkhalf/project.nvim',
         }
     },
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
     -- Syntax highlight
     {
         'nvim-treesitter/nvim-treesitter',

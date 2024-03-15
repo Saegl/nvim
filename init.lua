@@ -5,6 +5,7 @@ require("saegl.plugins")
 require("saegl.theme")
 require("saegl.git")
 require("saegl.telescope")
+require("saegl.harpoon")
 require("saegl.lsp")
 require("saegl.autocomplete")
 
