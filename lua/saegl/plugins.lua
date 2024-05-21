@@ -87,4 +87,11 @@ require("lazy").setup({
     },
     -- Git integration
     { 'lewis6991/gitsigns.nvim' },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        -- config = function()
+        -- require("which-key").setup()
+        -- end,
+    },
 })

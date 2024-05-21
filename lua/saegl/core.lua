@@ -9,6 +9,10 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+-- For which-key
+-- vim.o.timeout = true
+-- vim.o.timeoutlen = 300
+
 -- Always use english
 -- TODO: only on windows
 -- vim.api.nvim_exec ('language en_US', true)

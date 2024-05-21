@@ -8,4 +8,4 @@ require("saegl.telescope")
 require("saegl.harpoon")
 require("saegl.lsp")
 require("saegl.autocomplete")
-
+-- require("saegl.whichkey")
