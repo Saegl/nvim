@@ -8,6 +8,7 @@ lsp_zero.configure('jsonls', {})
 lsp_zero.configure('pyright', {})
 lsp_zero.configure('pylsp', {})
 lsp_zero.configure('ruff_lsp', {})
+lsp_zero.configure('rust_analyzer', {})
 lsp_zero.configure('nil_ls', {
     settings = {
         ['nil'] = {
@@ -25,6 +26,7 @@ lsp_zero.setup_servers({
     'pyright',
     'pylsp',
     'ruff_lsp',
+    'rust_analyzer',
     'nil_ls',
     'clangd',
 })
