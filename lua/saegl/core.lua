@@ -18,6 +18,7 @@ vim.opt.expandtab = true
 -- vim.api.nvim_exec ('language en_US', true)
 -- Fast access to conf
 vim.api.nvim_create_user_command('Conf', function() vim.cmd(":edit $MYVIMRC") end, {})
+vim.api.nvim_create_user_command('Q', function() vim.cmd(":q") end, {})
 
 -- Terminal
 vim.keymap.set({"n", "i"}, "<C-`>", function()
