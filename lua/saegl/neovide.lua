@@ -8,4 +8,5 @@ vim.g.neovide_cursor_vfx_mode = ""  -- set 'pixiedust' to enable
 vim.g.neovide_cursor_vfx_opacity = 500.0
 vim.g.neovide_cursor_vfx_particle_lifetime = 3.0
 vim.g.neovide_cursor_vfx_particle_density = 100.0
+vim.g.neovide_fullscreen = true
 
