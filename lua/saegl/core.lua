@@ -39,6 +39,10 @@ vim.keymap.set("n", "<C-k>", "<C-u>")
 vim.keymap.set("n", "<C-j>", "<C-d>")
 vim.opt.scrolloff = 10
 
+-- Window navigation
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+
 -- Copy to clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 
