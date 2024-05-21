@@ -20,27 +20,6 @@ vim.opt.expandtab = true
 vim.api.nvim_create_user_command('Conf', function() vim.cmd(":edit $MYVIMRC") end, {})
 vim.api.nvim_create_user_command('Q', function() vim.cmd(":q") end, {})
 
--- Terminal
-vim.keymap.set({"n", "i"}, "<C-`>", function()
-    -- Open a tab with terminal
-    local tabs = vim.api.nvim_list_tabpages()
-    for _, tab in ipairs(tabs) do
-        local wins = vim.api.nvim_tabpage_list_wins(tab)
-        for _, win in ipairs(wins) do
-            local buf = vim.api.nvim_win_get_buf(win)
-            if vim.bo[buf].buftype == 'terminal' then
-                vim.api.nvim_set_current_tabpage(tab)
-                vim.cmd("startinsert")
-                return
-            end
-        end
-    end
-    -- Or create new terminal tab 
-    vim.cmd('tabnew | term')
-    vim.cmd('startinsert')
-end)
-vim.keymap.set("t", "<C-`>", "<C-\\><C-n><C-Tab>")
-
 -- TODO: only on windows
 -- vim.opt.shell = 'pwsh'
 -- vim.opt.shellcmdflag = '-NoProfile -NoLogo -NonInteractive -Command'
