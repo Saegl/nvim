@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.number = false -- Focus
+vim.opt.relativenumber = false
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
 vim.opt.tabstop = 4
