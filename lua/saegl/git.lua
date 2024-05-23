@@ -15,10 +15,10 @@ require("gitsigns").setup({
         map('n', '<leader>hr', gitsigns.reset_hunk)
         map('n', '<leader>hu', gitsigns.undo_stage_hunk)
         map('n', '<leader>hp', gitsigns.preview_hunk)
+        map('n', '<leader>j', gitsigns.next_hunk)
+        map('n', '<leader>k', gitsigns.prev_hunk)
     end
 })
-
-local neogit = require('neogit')
 
 vim.keymap.set('n', '<leader>n', '<Cmd>Neogit<CR>')
 
