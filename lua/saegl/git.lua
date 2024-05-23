@@ -18,3 +18,7 @@ require("gitsigns").setup({
     end
 })
 
+local neogit = require('neogit')
+
+vim.keymap.set('n', '<leader>n', '<Cmd>Neogit<CR>')
+

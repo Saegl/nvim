@@ -111,7 +111,7 @@ require("lazy").setup({
     { 'lewis6991/gitsigns.nvim' },
     {
         "NeogitOrg/neogit",
-        tag = "v0.0.1",
+        tag = "v1.0.0",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "sindrets/diffview.nvim",
