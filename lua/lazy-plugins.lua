@@ -2,6 +2,7 @@ require 'lazy'.setup {
     -- Load plugins from `lua/plugins/*.lua`
     { import = 'plugins' },
 
+    'ThePrimeagen/vim-be-good',
     'tpope/vim-sleuth',                     -- Detect tabstop and shiftwidth automatically
     { 'numToStr/Comment.nvim', opts = {} }, -- Add comments with 'gcc'
     {
