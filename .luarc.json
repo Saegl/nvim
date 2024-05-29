@@ -4,7 +4,9 @@
         "lua/?.lua",
         "lua/?/init.lua"
     ],
-    "dignostics.globals": ["vim"],
+    "dignostics.globals": [
+        "vim"
+    ],
     "workspace.checkThirdParthy": false,
     "workspace.library": [
         "$VIMRUNTIME",

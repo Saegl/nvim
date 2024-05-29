@@ -12,8 +12,8 @@ vim.opt.breakindent = true
 vim.opt.showbreak = '>>'
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true  -- ignore case in search
-vim.opt.smartcase = true   -- ignore 'ignore' if pattern contains uppercase letters
+vim.opt.ignorecase = true -- ignore case in search
+vim.opt.smartcase = true  -- ignore 'ignore' if pattern contains uppercase letters
 
 -- always draw leftest column for signs (git, breakpoints etc)
 vim.opt.signcolumn = 'yes'
@@ -39,8 +39,6 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- TODO: Magic commands
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
+vim.opt.tabstop = 4      -- <Tab> size
+vim.opt.shiftwidth = 4   -- Number of spaces for (auto)indent
+vim.opt.expandtab = true -- Substitute <Tab> with spaces
