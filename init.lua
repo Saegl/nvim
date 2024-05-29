@@ -11,14 +11,16 @@ require 'keymaps'
 require 'usercommands'
 
 require("saegl.neovide")
-require("saegl.install_lazy")
-require("saegl.plugins")
-require("saegl.theme")
-require("saegl.git")
-require("saegl.telescope")
-require("saegl.harpoon")
-require("saegl.lsp")
-require("saegl.dap")
-require("saegl.autocomplete")
-require("saegl.runner")
+
+require 'lazy-bootstrap'
+require 'lazy-plugins'
+
+-- require("saegl.plugins")
+-- require("saegl.theme")
+-- require("saegl.git")
+-- require("saegl.harpoon")
+-- require("saegl.lsp")
+-- require("saegl.dap")
+-- require("saegl.autocomplete")
+-- require("saegl.runner")
 -- require("saegl.whichkey")
