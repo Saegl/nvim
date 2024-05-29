@@ -3,7 +3,7 @@ return {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
         keys = {
-            { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+            { '\\', ':Neotree toggle<CR>', { desc = 'NeoTree toggle' } },
         },
         opts = {
             filesystem = {
