@@ -103,14 +103,6 @@ require("lazy").setup({
         },
     },
     -- DAP
-    {
-        'mfussenegger/nvim-dap',
-        dependencies = {
-            "rcarriga/nvim-dap-ui",
-            "nvim-neotest/nvim-nio",
-            "theHamsta/nvim-dap-virtual-text",
-        },
-    },
     -- Git integration
     { 'lewis6991/gitsigns.nvim' },
     {
