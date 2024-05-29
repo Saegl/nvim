@@ -9,10 +9,7 @@ vim.g.have_nerd_font = false
 require 'options'
 require 'keymaps'
 require 'usercommands'
-
-require("saegl.neovide")
-
--- TODO return neogit
+require 'neovide'
 
 require 'lazy-bootstrap'
 require 'lazy-plugins'
