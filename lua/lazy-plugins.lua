@@ -2,8 +2,14 @@ require 'lazy'.setup {
     -- Load plugins from `lua/custom/plugins/*.lua`
     { import = 'custom.plugins' },
 
-    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+    'tpope/vim-sleuth',                      -- Detect tabstop and shiftwidth automatically
     { 'numToStr/Comment.nvim',  opts = {} }, -- Add comments with 'gcc'
+    {
+        'folke/todo-comments.nvim',
+        event = 'VimEnter',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        opts = { signs = false }
+    },
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
