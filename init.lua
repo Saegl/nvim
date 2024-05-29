@@ -12,12 +12,13 @@ require 'usercommands'
 
 require("saegl.neovide")
 
+-- TODO return neogit
+
 require 'lazy-bootstrap'
 require 'lazy-plugins'
 
 -- require("saegl.plugins")
 -- require("saegl.theme")
--- require("saegl.git")
 -- require("saegl.harpoon")
 -- require("saegl.lsp")
 -- require("saegl.dap")
