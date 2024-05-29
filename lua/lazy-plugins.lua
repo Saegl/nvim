@@ -1,9 +1,9 @@
 require 'lazy'.setup {
-    -- Load plugins from `lua/custom/plugins/*.lua`
-    { import = 'custom.plugins' },
+    -- Load plugins from `lua/plugins/*.lua`
+    { import = 'plugins' },
 
-    'tpope/vim-sleuth',                      -- Detect tabstop and shiftwidth automatically
-    { 'numToStr/Comment.nvim',  opts = {} }, -- Add comments with 'gcc'
+    'tpope/vim-sleuth',                     -- Detect tabstop and shiftwidth automatically
+    { 'numToStr/Comment.nvim', opts = {} }, -- Add comments with 'gcc'
     {
         'folke/todo-comments.nvim',
         event = 'VimEnter',
