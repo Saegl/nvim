@@ -24,13 +24,6 @@ require 'lazy'.setup {
             require('leap').create_default_mappings()
         end,
     },
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require('lualine').setup()
-        end,
-    },
     -- Git integration
     { 'tpope/vim-fugitive' },
     {
