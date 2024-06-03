@@ -12,14 +12,6 @@ require 'lazy'.setup({
         opts = { signs = false }
     },
     {
-        'akinsho/toggleterm.nvim',
-        version = "*",
-        opts = {
-            size = 20,
-            open_mapping = [[<c-`>]],
-        }
-    },
-    {
         'ggandor/leap.nvim',
         config = function()
             require('leap').create_default_mappings()
