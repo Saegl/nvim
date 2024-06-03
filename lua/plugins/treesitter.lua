@@ -13,6 +13,15 @@ return {
                 additional_vim_regex_highlighting = { 'ruby' },
             },
             indent = { enable = true, disable = { 'ruby' } },
+            incremental_selection = {
+                enable = true,
+                keymaps = {
+                    init_selection = "vv", -- set to `false` to disable one of the mappings
+                    node_incremental = "=",
+                    scope_incremental = "grc",
+                    node_decremental = "-",
+                },
+            },
         },
         config = function(_, opts)
             -- Prefer git instead of curl in order to improve connectivity in some environments
