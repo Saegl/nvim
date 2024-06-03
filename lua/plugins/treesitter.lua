@@ -28,4 +28,12 @@ return {
             --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
         end,
     },
+    {
+        'Wansmer/treesj',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' },
+        config = function()
+            local treesj = require 'treesj'
+            vim.keymap.set('n', '<leader>m', treesj.toggle)
+        end,
+    }
 }
