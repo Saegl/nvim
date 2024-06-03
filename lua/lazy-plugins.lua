@@ -1,4 +1,4 @@
-require 'lazy'.setup {
+require 'lazy'.setup({
     -- Load plugins from `lua/plugins/*.lua`
     { import = 'plugins' },
 
@@ -40,4 +40,6 @@ require 'lazy'.setup {
             mappings = true,
         }
     }
-}
+}, {
+    change_detection = { notify = false },
+})
