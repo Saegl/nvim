@@ -12,6 +12,9 @@ require 'lazy'.setup({
         opts = { signs = false }
     },
     {
+        'Vimjas/vim-python-pep8-indent',
+    },
+    {
         'ggandor/leap.nvim',
         enabled = false,
         config = function()
