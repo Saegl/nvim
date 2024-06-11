@@ -5,3 +5,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
+
+require 'lazy'.setup({
+    -- Load plugins from `lua/plugins/*.lua`
+    { import = 'saegl.plugins' },
+    { import = 'saegl.plugins.languages' },
+}, {
+    change_detection = { notify = false },
+})
