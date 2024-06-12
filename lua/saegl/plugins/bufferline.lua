@@ -13,11 +13,12 @@ return {
 
                 modified_icon = "M",
                 offsets = {
-                    -- FIXME: Don't work
-                    filetype = "neo-tree",
-                    text = "File directory",
-                    highlight = "Directory",
-                    separator = true,
+                    {
+                        filetype = "neo-tree",
+                        text = "Explorer",
+                        highlight = "Directory",
+                        text_align = 'left',
+                    }
                 },
 
                 persist_buffer_sort = false,
