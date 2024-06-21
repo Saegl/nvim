@@ -1,6 +1,9 @@
 vim.opt.number = false
 vim.opt.relativenumber = false
 
+-- Turn '~' into operator ('~' is swapcase action)
+vim.opt.tildeop = true
+
 -- Enable mouse in all modes, in 'nvi' by default
 vim.opt.mouse = 'a'
 
@@ -30,11 +33,14 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+-- Wrap <Left> <Right>, in normal mode (<,>) and insert mode ([,])
+vim.opt.whichwrap = "b,s,<,>,[,]"
+
 -- Preview substitutions
 vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
