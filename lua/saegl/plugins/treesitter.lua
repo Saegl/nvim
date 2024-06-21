@@ -122,5 +122,22 @@ return {
             local treesj = require 'treesj'
             vim.keymap.set('n', '<leader>m', treesj.toggle)
         end,
+    },
+    {
+        'nvim-treesitter/nvim-treesitter-context',
+        keys = {
+            {
+                "<leader>cc",
+                function()
+                    require("treesitter-context").go_to_context(vim.v.count1)
+                end,
+                desc = "Go to Treesitter context"
+            }
+        },
+        event = "VeryLazy",
+        opts = {
+            max_lines = 3,
+            trim_scope = "inner",
+        },
     }
 }
