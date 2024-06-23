@@ -27,9 +27,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Terminal mode -> Normal mode
 -- NOTE: This won't work in all terminal emulators/tmux/etc
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
--- Save me
--- NOTE: This won't work in all terminal emulators
+
+-- Regular editor behavior
 vim.keymap.set({ 'n', 'i' }, '<C-s>', '<cmd>w<cr>', { desc = "save" })
+vim.keymap.set({ 'n', 'v', 'i', 't' }, '<C-a>', '<C-\\><C-n>ggvG', { desc = "select all" })
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {
