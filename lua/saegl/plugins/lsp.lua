@@ -102,12 +102,6 @@ return {
                         end, '[T]oggle Inlay [H]ints')
                     end
 
-                    x = 1
-
-                    map('<leader>td', function()
-                        vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-                    end, '[T]oggle [D]iagnostic')
-
                     map('<leader>vd', vim.diagnostic.open_float, '[V]iew [d]iagnostic')
                     map('<leader>vc', vim.lsp.buf.code_action, '[V]iew [C]ode Action')
                     map('<leader>vs', vim.lsp.buf.signature_help, '[V]iew [s]ignature')
