@@ -4,6 +4,6 @@ vim.g.maplocalleader = " "
 
 require 'saegl.options'
 require 'saegl.keymaps'
-require 'saegl.usercommands'
+require 'saegl.config'
 require 'saegl.neovide'
 require 'saegl.lazy'

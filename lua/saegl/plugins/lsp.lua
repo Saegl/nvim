@@ -54,10 +54,6 @@ return {
                     --  Most Language Servers support renaming across files, etc.
                     map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
-                    -- Execute a code action, usually your cursor needs to be on top of an error
-                    -- or a suggestion from your LSP for this to activate.
-                    map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-
                     -- Opens a popup that displays documentation about the word under your cursor
                     --  See `:help K` for why this keymap.
                     map('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -102,9 +98,19 @@ return {
                     -- This may be unwanted, since they displace some of your code
                     if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
                         map('<leader>th', function()
-                            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+                            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled {})
                         end, '[T]oggle Inlay [H]ints')
                     end
+
+                    x = 1
+
+                    map('<leader>td', function()
+                        vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+                    end, '[T]oggle [D]iagnostic')
+
+                    map('<leader>vd', vim.diagnostic.open_float, '[V]iew [d]iagnostic')
+                    map('<leader>vc', vim.lsp.buf.code_action, '[V]iew [C]ode Action')
+                    map('<leader>vs', vim.lsp.buf.signature_help, '[V]iew [s]ignature')
                 end,
             })
 
