@@ -29,8 +29,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Regular editor behavior
-vim.keymap.set({ 'n', 'i' }, '<C-s>', '<cmd>w<cr>', { desc = "save" })
-vim.keymap.set({ 'n', 'v', 'i', 't' }, '<C-a>', '<C-\\><C-n>ggvG', { desc = "select all" })
+vim.keymap.set({ 'n', 'i' }, '<C-s>', '<cmd>w<cr><esc>', { desc = "save" })
+vim.keymap.set({ 'n', 'v', 't' }, '<C-a>', '<C-\\><C-n>ggvG', { desc = "select all" })
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd('TextYankPost', {
