@@ -4,6 +4,7 @@
 
 # TODO
 - [READ] User manual `:help user-manual`
+- [ADD] DAP status to lualine
 - [TRY] neotest plugin
 - [TRY] mini.nvim motions plugins
 - [TRY] treesitter plugins
