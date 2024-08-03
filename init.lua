@@ -6,6 +6,7 @@ vim.o.guifont = "FiraCode Nerd Font Mono"
 
 require 'saegl.options'
 require 'saegl.keymaps'
+require 'saegl.abbrevs'
 require 'saegl.runner'
 require 'saegl.config'
 require 'saegl.neovide'
