@@ -2,6 +2,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.o.guifont = "FiraCode Nerd Font Mono"
+
 require 'saegl.options'
 require 'saegl.keymaps'
 require 'saegl.config'
