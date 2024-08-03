@@ -25,6 +25,10 @@ vim.opt.signcolumn = 'yes'
 -- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
 
+-- Enable spell checking
+-- vim.opt.spelllang = 'en_us'
+-- vim.opt.spell = true
+
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
