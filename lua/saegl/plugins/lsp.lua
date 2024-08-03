@@ -133,6 +133,15 @@ return {
                 }
             }
             lsp_config['clangd'].setup {}
+            lsp_config['ltex'].setup {
+                settings = {
+                    ltex = {
+                        language = "en-US",
+                        -- FIXME: dictionary is not loaded
+                        dictionary = "/home/saegl/.config/nvim/spell/ltex_dictionary.txt", -- TODO: relative?
+                    },
+                },
+            }
         end,
     },
 }
