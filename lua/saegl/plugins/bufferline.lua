@@ -69,12 +69,12 @@ return {
                 { desc = "Close ungrouped" }
             )
 
-            vim.keymap.set(
-                'n',
-                '<Tab>',
-                '<cmd>BufferLineCycleNext<cr>',
-                { desc = "Next buffer" }
-            )
+            -- vim.keymap.set(
+            --     'n',
+            --     '<Tab>',
+            --     '<cmd>BufferLineCycleNext<cr>',
+            --     { desc = "Next buffer" }
+            -- )
             vim.keymap.set(
                 'n',
                 '<S-Tab>',
