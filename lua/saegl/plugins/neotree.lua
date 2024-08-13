@@ -10,7 +10,7 @@ return {
                 window = {
                     mappings = {
                         ['\\'] = 'close_window',
-                        ['<tab>'] = 'toggle_node',
+                        ['<tab>'] = 'open',
                     },
                 },
             },
