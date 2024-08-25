@@ -25,6 +25,10 @@ return {
                         vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
                     end
 
+                    local imap = function(keys, func, desc)
+                        vim.keymap.set('i', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+                    end
+
                     -- Jump to the definition of the word under your cursor.
                     --  This is where a variable was first declared, or where a function is defined, etc.
                     --  To jump back, press <C-t>.
@@ -104,7 +108,7 @@ return {
 
                     map('<leader>vd', vim.diagnostic.open_float, '[V]iew [d]iagnostic')
                     map('<leader>vc', vim.lsp.buf.code_action, '[V]iew [C]ode Action')
-                    map('<leader>vs', vim.lsp.buf.signature_help, '[V]iew [s]ignature')
+                    imap('<C-k>', function() vim.lsp.buf.signature_help() end, '[V]iew [s]ignature')
                 end,
             })
 
