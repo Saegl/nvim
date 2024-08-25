@@ -123,8 +123,8 @@ return {
 
             lsp_config['lua_ls'].setup {}
             lsp_config['jsonls'].setup {}
-            -- lsp_config['pyright'].setup {}
-            lsp_config['pylsp'].setup {}
+            lsp_config['pyright'].setup {}
+            -- lsp_config['pylsp'].setup {}
             lsp_config['ruff_lsp'].setup {}
             lsp_config['rust_analyzer'].setup {}
             lsp_config['nil_ls'].setup {
