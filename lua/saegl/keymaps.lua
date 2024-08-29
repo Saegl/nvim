@@ -2,10 +2,6 @@
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- Remap fast scroll
-vim.keymap.set("n", "<C-k>", "<C-u>")
-vim.keymap.set("n", "<C-j>", "<C-d>")
-
 -- Window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
