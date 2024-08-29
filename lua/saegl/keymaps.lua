@@ -12,6 +12,10 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 
+-- "q:" is driving me crazy, but even this keymap cannot kill it entirely
+-- if you do 'q<long_wait>:' it will open history anyway
+vim.keymap.set('n', 'q:', ':')
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
