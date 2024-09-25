@@ -146,6 +146,7 @@ return {
                     },
                 },
             }
+            lsp_config['marksman'].setup {}
         end,
     },
 }
