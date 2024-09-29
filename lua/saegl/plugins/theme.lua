@@ -136,8 +136,9 @@ return {
         config = function()
             require('nightfox').setup {
                 options = {
-                    dim_inactive = true,
-                }
+                    dim_inactive = false,
+                    transparent = true,
+                },
             }
             vim.cmd.colorscheme 'carbonfox'
         end,
